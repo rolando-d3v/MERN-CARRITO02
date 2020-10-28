@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require("path");
 const morgan = require('morgan');
 const app = express()
 require('./config')
@@ -21,6 +22,8 @@ app.use(bodyParser.json());
 app.use(cors())
 app.use(morgan('dev'))
 
+//STATIC EXPRESS
+app.use(express.static(path.join( __dirname,'public')))
 
 //ROUTERS
 app.use('/' , require('./routers/productoRouter'))
