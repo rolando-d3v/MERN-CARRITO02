@@ -1,0 +1,16 @@
+.div_main {
+    height: 100%;
+}
+
+
+.marginOFF {
+   margin-left: 250px;
+   transition: 0.5s;
+  }
+  
+  
+.marginON {
+    margin-left: 76px;
+   transition: 0.5s;
+   }
+   

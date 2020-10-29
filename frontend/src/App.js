@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState} from "react";
+import "./App.css";
+import {BrowserRouter} from 'react-router-dom'
+import Navegador from './layout/navegador'
+import Mainx from './layout/main/Main'
+
 
 function App() {
+
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
+  const [toggleState, setToggleState] = useState(false);
+
+  const toggle = () => {
+    setToggleState(toggleState === false ? true : false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <BrowserRouter>
+      <Navegador  toggle={toggle}  toggleState={toggleState} />
+      <Mainx toggleState={toggleState} />
+      </BrowserRouter>
     </div>
   );
 }

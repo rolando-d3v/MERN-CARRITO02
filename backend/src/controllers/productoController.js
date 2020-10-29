@@ -47,8 +47,8 @@ exports.createProducto = async (req, res) => {
 exports.deleteProducto = async (req, res) => {
   try {
     const producto = await productoModel.findOneAndDelete({_id: req.params.idProducto});
-    await unlink(path.resolve())
-    res.json({ ok: true, message: 'producto eliminado' + producto.filename });
+    await unlink(path.resolve(`./src/public${producto.path}` ))
+    res.json({ ok: true, message: 'producto eliminado ' + producto.filename });
   } catch (error) {
     res.send(error);
   }
