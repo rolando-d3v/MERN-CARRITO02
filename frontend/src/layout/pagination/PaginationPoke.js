@@ -1,7 +1,7 @@
 import React from "react";
 import Pagination from "rc-pagination";
 
-import "./Pagination.scss";
+import "./pagination.scss";
 
 export default function PaginationPoke(props) {
   const { currentPage, totalItems, onChangePage } = props;
@@ -12,7 +12,7 @@ export default function PaginationPoke(props) {
       className="pagination"
       current={currentPage}
       total={totalItems}
-      pageSize={6}
+      pageSize={12}
       onChange={onChangePage}
     />
    </div>

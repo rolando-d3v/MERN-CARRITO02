@@ -6,9 +6,9 @@ const path = require('path');
 exports.getProductos = async (req, res) => {
   try {
     //pagination
-    let limit = parseInt(req.query.limit) || 6;
+    let limit = parseInt(req.query.limit) || 12;
     let page = parseInt(req.query.page);
-    const producto = await productoModel.paginate({}, {limit, page})
+    const producto = await productoModel.paginate({}, {limit, page, sort:{ createdAt: 1 }}) 
     res.json(producto)
   } catch (error) {
     res.send(error);
@@ -57,3 +57,16 @@ exports.deleteProducto = async (req, res) => {
     res.send(error);
   }
 };
+
+
+exports.buscarProducto = async (req, res) => {
+  try {
+    let name = req.params.name
+    let regTermino =  new RegExp(name, 'i')
+    const buscarPro = await productoModel.find({name: regTermino})
+    res.json(buscarPro)
+    
+  } catch (error) {
+    res.send(error)
+  }
+}

@@ -10,7 +10,7 @@ function Photo({ e_pro }) {
   console.log(url);
 
   return (
-    <Card style={{ width: "17.8rem", margin: "10px" }}>
+    <Card style={{ width: "17.7rem", margin: "10px" }}>
       <Card.Img variant="top" src={`${url}${e_pro.path}`} />
       <Card.Body>
         <Card.Title>{e_pro.name} </Card.Title>

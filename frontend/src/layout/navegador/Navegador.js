@@ -1,13 +1,11 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import { Navbar, Nav, Image } from "react-bootstrap";
 import { FaUserTie, FaIdCard } from "react-icons/fa";
-
 import logo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
 
 
-
-const Navegador = ({toggle, toggleState}) => {
+const Navegador = () => {
 
   return (
     

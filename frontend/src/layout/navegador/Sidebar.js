@@ -5,16 +5,16 @@ import {
   FaAlignJustify,
   FaPenSquare,
   FaSearch,
-  FaAddressBook,
+  FaTable,
   FaSignOutAlt,
   FaAlignLeft
 } from "react-icons/fa";
 import "./sidebar.scss";
 
 const navList = [
-  { icon: <FaPenSquare />, link: "/preguntas", menu: "Examen" },
-  { icon: <FaSearch />, link: "/home", menu: "Tutorial" },
-  { icon: <FaAddressBook />, link: "/", menu: "Promedio" },
+  { icon: <FaPenSquare />, link: "/preguntas", menu: "Formulario" },
+  { icon: <FaSearch />, link: "/buscar", menu: "Busqueda" },
+  { icon: <FaTable />, link: "/tabla", menu: "Tabla" },
   {
     icon: <FaSignOutAlt />,
     link: "/login",
@@ -45,11 +45,11 @@ const SidebarComponent = (props) => {
             <Link className="grey" to="/preguntas">
             <FaPenSquare />
             </Link>
-            <Link className="grey" to="/home">
+            <Link className="grey" to="/buscar">
             <FaSearch />
             </Link>
-            <Link className="grey" to="/">
-              <FaAddressBook />
+            <Link className="grey" to="/tabla">
+              <FaTable />
             </Link>
           </div>
         </div>

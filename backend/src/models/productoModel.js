@@ -11,8 +11,9 @@ const productoSchema = new Schema(
     originalName: String,
     description: String,
   },
-  { timestamps: true }
+  { timestamps: true}
 );
+
 
 productoSchema.plugin(mongoosePaginate)
 
