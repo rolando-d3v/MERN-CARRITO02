@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { NavItem, Nav } from "react-bootstrap";
 import {
   FaAlignJustify,
@@ -8,7 +9,7 @@ import {
   FaSignOutAlt,
   FaAlignLeft
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import "./sidebar.scss";
 
 const navList = [
   { icon: <FaBriefcase />, link: "/preguntas", menu: "Examen" },
@@ -23,10 +24,10 @@ const navList = [
 
 const SidebarComponent = (props) => {
   return (
-    <div className={`sidebar ${props.isOpen ? "sidebar-visible" : ""}`}>
-     { props.isOpen ?  <FaAlignLeft className="sidebar__close h2" onClick={props.toggle} />
+    <div className={`sidebar ${props.toggleState ? "sidebar-visible" : ""}`}>
+     { props.toggleState ?  <FaAlignLeft className="sidebar__close h2" onClick={props.toggle} />
       : <FaAlignJustify className="sidebar__close h2" onClick={props.toggle} />}
-      {props.isOpen ? (
+      {props.toggleState ? (
         <div className="sidebar__menu  ">
           <Nav className="list-unstyled pb-3">
             {navList.map((nav, i) => (

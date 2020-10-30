@@ -1,16 +1,17 @@
 .div_main {
     height: 100%;
+    width: auto;
 }
 
 
 .marginOFF {
-   margin-left: 250px;
+   margin-left: 265px;
    transition: 0.5s;
   }
   
   
 .marginON {
-    margin-left: 76px;
+    margin-left: 90px;
    transition: 0.5s;
    }
    

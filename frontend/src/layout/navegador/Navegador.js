@@ -2,19 +2,16 @@ import React, { useState, useContext } from "react";
 import { Navbar, Nav, Image } from "react-bootstrap";
 import { FaUserTie, FaIdCard } from "react-icons/fa";
 
-import Sidebar from "./Sidebar";
 import logo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
-import "./navegador.css";
+
 
 
 const Navegador = ({toggle, toggleState}) => {
 
-
-
   return (
-    <div>
-      <Navbar  bg='dark' className="nav-bar navbar-dark justify-content-end"  >
+    
+      <Navbar  bg='dark' className="nav-bar navbar-dark justify-content-end" sticky="top" >
         <Link className="navbar-brand  navbar-text font-weight-bold"
           to="/"
         >
@@ -44,8 +41,7 @@ const Navegador = ({toggle, toggleState}) => {
           </ul>
         </Nav>
       </Navbar>
-      <Sidebar toggle={toggle} isOpen={toggleState} />
-    </div>
+    
   );
 };
 

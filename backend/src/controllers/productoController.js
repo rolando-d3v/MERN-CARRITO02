@@ -5,12 +5,16 @@ const path = require('path');
 //ENDPOINT  OBTENER ALL PRODUCTOS
 exports.getProductos = async (req, res) => {
   try {
-    const producto = await productoModel.find({});
-    res.json({ ok: true, count: producto.length, producto });
+    //pagination
+    let limit = parseInt(req.query.limit) || 6;
+    let page = parseInt(req.query.page);
+    const producto = await productoModel.paginate({}, {limit, page})
+    res.json(producto)
   } catch (error) {
     res.send(error);
   }
 };
+
 
 //ENDPOINT  OBTENER UN PRODUCTO
 exports.getProducto = async (req, res) => {

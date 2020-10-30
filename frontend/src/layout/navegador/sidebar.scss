@@ -1,10 +1,4 @@
-.nav-bar {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-  }
-  
+
   .sidebar {
     bottom: 0;
     left: 0;
@@ -28,8 +22,6 @@
     color: rgb(0, 119, 255);
   }
 
-
-  
   .sidebar__menu {
     margin-top: 2em;
     padding: 1em 1.5em 1em  1em ;
@@ -37,22 +29,18 @@
   }
 
   .sidebarol {
-    /* background-color: red; */
     float: right;
     margin: 3.8em 1.5em 1em  1em ; 
     height: 200px;
+
+    .grey {
+      display: block;
+      font-size: 1.3em;
+      margin: 6px 0;
+      width: 25px;
+    }
   }
 
-
-  .sidebarol .grey {
-    display: block;
-    font-size: 1.3em;
-    margin: 6px 0;
-    width: 25px;
-  }
-
-  
-  
   
   .sidebar li {
     padding: 0.8em;
