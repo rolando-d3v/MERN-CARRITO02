@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { NavItem, Nav } from "react-bootstrap";
 import {
   FaAlignJustify,
-  FaBriefcase,
-  FaMoneyBill,
+  FaPenSquare,
+  FaSearch,
   FaAddressBook,
   FaSignOutAlt,
   FaAlignLeft
@@ -12,8 +12,8 @@ import {
 import "./sidebar.scss";
 
 const navList = [
-  { icon: <FaBriefcase />, link: "/preguntas", menu: "Examen" },
-  { icon: <FaMoneyBill />, link: "/home", menu: "Tutorial" },
+  { icon: <FaPenSquare />, link: "/preguntas", menu: "Examen" },
+  { icon: <FaSearch />, link: "/home", menu: "Tutorial" },
   { icon: <FaAddressBook />, link: "/", menu: "Promedio" },
   {
     icon: <FaSignOutAlt />,
@@ -43,10 +43,10 @@ const SidebarComponent = (props) => {
         <div className="sidebarol">
           <div className="list-rol">
             <Link className="grey" to="/preguntas">
-            <FaBriefcase />
+            <FaPenSquare />
             </Link>
             <Link className="grey" to="/home">
-            <FaMoneyBill />
+            <FaSearch />
             </Link>
             <Link className="grey" to="/">
               <FaAddressBook />
