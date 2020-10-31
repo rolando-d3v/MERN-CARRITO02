@@ -27,17 +27,39 @@ exports.getProducto = async (req, res) => {
 };
 
 
+// //ENDPOINT PARA CREAR PRODUCTOS
+// exports.createProducto = async (req, res) => {
+//   try {
+//     const producto = new productoModel();
+//     producto.name = req.body.name;
+//     producto.precioUnitario = req.body.precioUnitario;
+//     producto.description = req.body.description;
+//     producto.filename = req.file.filename;
+//     producto.size = req.file.size;
+//     producto.path = "/upload/" + req.file.filename;
+//     producto.originalName = req.file.originalname;
+//     await producto.save();
+//     res.json({ ok: true, message: "producto create successfully" });
+//     console.log(producto);
+//   } catch (error) {
+//     res.send(error);
+//   }
+// };
+
+
 //ENDPOINT PARA CREAR PRODUCTOS
 exports.createProducto = async (req, res) => {
   try {
-    const producto = new productoModel();
-    producto.name = req.body.name;
-    producto.precioUnitario = req.body.precioUnitario;
-    producto.description = req.body.description;
-    producto.filename = req.file.filename;
-    producto.size = req.file.size;
-    producto.path = "/upload/" + req.file.filename;
-    producto.originalName = req.file.originalname;
+    const producto = new productoModel({
+      name : req.body.name,
+      precioUnitario : req.body.precioUnitario,
+      description : req.body.description,
+      filename : req.file.filename,
+      size : req.file.size,
+      path : "/upload/" + req.file.filename,
+      originalName : req.file.originalname,
+    });
+  
     await producto.save();
     res.json({ ok: true, message: "producto create successfully" });
     console.log(producto);
