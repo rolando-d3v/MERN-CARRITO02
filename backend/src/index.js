@@ -27,3 +27,4 @@ app.use(express.static(path.join( __dirname,'public')))
 
 //ROUTERS
 app.use('/' , require('./routers/productoRouter'))
+app.use('/', require('./routers/userRouter'))

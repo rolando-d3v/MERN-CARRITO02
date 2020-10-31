@@ -27,7 +27,7 @@ exports.getProducto = async (req, res) => {
 };
 
 
-// //ENDPOINT PARA CREAR PRODUCTOS
+// //ENDPOINT PARA CREAR PRODUCTOS   PRIMERA FORMA
 // exports.createProducto = async (req, res) => {
 //   try {
 //     const producto = new productoModel();
