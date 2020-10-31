@@ -20,15 +20,15 @@ function TablaPoke() {
        obtenerData()
     }, [page])
     
+    
     const onChangePage = page => {
         setPage(page);
       };
 
-
     return (
         <div>
          <div>
-         <h3 className='text-center my-3' >Lista de Pokemones</h3>
+         <h2 className='text-center my-3' >Lista de Pokemos</h2>
          <PaginationPoke currentPage={page} totalItems={total.totalDocs} onChangePage={onChangePage} />
          </div>
          <Tabla dataTable={dataTable} />

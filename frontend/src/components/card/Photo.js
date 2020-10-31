@@ -8,12 +8,14 @@ function Photo({ e_pro }) {
   let url = process.env.REACT_APP_BACKEND_URL;
 
   console.log(url);
+  
 
   return (
-    <Card style={{ width: "17.7rem", margin: "10px" }}>
+    // <Card style={{ width: "17.7rem", margin: "10px" }} className=' animate__animated animate__fadeInDown' >
+    <Card style={{ width: "17.7rem", margin: "10px" }} className=' animate__animated animate__fadeIn' >
       <Card.Img variant="top" src={`${url}${e_pro.path}`} />
       <Card.Body>
-        <Card.Title>{e_pro.name} </Card.Title>
+        <Card.Title className='text-center' >{e_pro.name} </Card.Title>
         <span>{e_pro.description}</span>
         <span> Precio: {e_pro.precioUnitario} $</span>
         <p> creado: {format(e_pro.createdAt)} </p>

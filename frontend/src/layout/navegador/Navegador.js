@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 const Navegador = () => {
 
   return (
-    
       <Navbar  bg='dark' className="nav-bar navbar-dark justify-content-end" sticky="top" >
         <Link className="navbar-brand  navbar-text font-weight-bold"
           to="/"
@@ -19,7 +18,7 @@ const Navegador = () => {
             height="30"
             className="d-inline-block align-top mr-2"
           />{" "}
-        Spotify
+        PokeDesk
         </Link >
 
         <Nav className="mr-auto "  >

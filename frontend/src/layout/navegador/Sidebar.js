@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { NavItem, Nav } from "react-bootstrap";
 import {
-  FaAlignJustify,
+  FaIndent,
+  FaOutdent,
   FaPenSquare,
   FaSearch,
   FaTable,
   FaSignOutAlt,
-  FaAlignLeft
 } from "react-icons/fa";
 import "./sidebar.scss";
 
@@ -15,18 +15,19 @@ const navList = [
   { icon: <FaPenSquare />, link: "/preguntas", menu: "Formulario" },
   { icon: <FaSearch />, link: "/buscar", menu: "Busqueda" },
   { icon: <FaTable />, link: "/tabla", menu: "Tabla" },
-  {
-    icon: <FaSignOutAlt />,
-    link: "/login",
-    menu: <span> Salir </span>,
+  {icon: <FaSignOutAlt />,link: "/login",menu: 'salir',
   },
 ];
 
 const SidebarComponent = (props) => {
   return (
     <div className={`sidebar ${props.toggleState ? "sidebar-visible" : ""}`}>
-     { props.toggleState ?  <FaAlignLeft className="sidebar__close h2" onClick={props.toggle} />
-      : <FaAlignJustify className="sidebar__close h2" onClick={props.toggle} />}
+
+     <div className='tooglex' >
+     { props.toggleState ?  <FaOutdent className="sidebar__close h2" onClick={props.toggle} />
+      : <FaIndent className="sidebar__close h2" onClick={props.toggle} />}
+     </div>
+
       {props.toggleState ? (
         <div className="sidebar__menu  ">
           <Nav className="list-unstyled pb-3">
@@ -42,13 +43,13 @@ const SidebarComponent = (props) => {
       ) : (
         <div className="sidebarol">
           <div className="list-rol">
-            <Link className="grey" to="/preguntas">
+            <Link className="nav-link" to="/preguntas">
             <FaPenSquare />
             </Link>
-            <Link className="grey" to="/buscar">
+            <Link className="nav-link" to="/buscar">
             <FaSearch />
             </Link>
-            <Link className="grey" to="/tabla">
+            <Link className="nav-link" to="/tabla">
               <FaTable />
             </Link>
           </div>

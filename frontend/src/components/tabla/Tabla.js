@@ -12,9 +12,10 @@ function Tabla(props) {
   return (
     <div>
       <Table responsive  bordered hover  >
-        <thead>
+        <thead className='thead-dark' >
           <tr>
             <th>#</th>
+            <th>ID</th>
             <th>Name Pokemon</th>
             <th>Descripcion</th>
             <th>Fecha</th>
@@ -25,6 +26,7 @@ function Tabla(props) {
           <tbody key={table._id} >
           <tr>
             <td>{index}  </td>
+            <td>{table._id}  </td>
             <td> {table.name} </td>
             <td> {table.description} </td>
             <td>{format(new Date(table.createdAt), 'dd/MMM/yyyy - kkmm-aaaa')}</td>
