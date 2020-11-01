@@ -7,8 +7,8 @@ exports.getProductos = async (req, res) => {
   try {
     //pagination
     let limit = parseInt(req.query.limit) || 12;
-    // let page = parseInt(req.query.page);
-    const producto = await productoModel.paginate({}, {limit, sort:{ createdAt: -1 }}) 
+    let page = parseInt(req.query.page) 
+    const producto = await productoModel.paginate({}, {limit, page, sort:{ createdAt: -1 }}) 
     res.json(producto)
   } catch (error) {
     res.send(error);
