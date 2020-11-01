@@ -1,19 +1,35 @@
 const { Schema, model } = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
-const userSchema = new Schema({
-  email: {
-    type: String,
-    required: true,
-    min: 6,
+//ROLES VALIDOS
+let rolesValidos = {
+  values: ["USER_ROLE", "ADMIN_ROLE"],
+  message: "{VALUE} no es un role valido",
+};
+
+//SCHEMA DEL USER
+const userSchema = new Schema(
+  {
+    email: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
+    password: { type: String, required: true },
+    estado: { type: Boolean, default: true },
+    role: { type: String, default: "USER_ROLE", enum: rolesValidos },
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-});
+  { timestamps: true }
+);
+
+// //FUNCION PARA NO MOSTRAR EL PASSWORD EN EL JSON DEL BACK-END
+// userSchema.methods.toJSON = function() {
+//     let user = this;
+//     let userObject = user.toObject();
+//     delete userObject.password;
+
+//     return userObject;
+//   }
+
+
+//MONGOOSE PAGINATE
+userSchema.plugin(mongoosePaginate);
 
 module.exports = model("user", userSchema);
