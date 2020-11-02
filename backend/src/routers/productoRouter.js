@@ -1,9 +1,10 @@
 const {Router} = require('express');
 
-//MIDDLEWARE
+//_*MIDDLEWARE
 const upload = require('../middlewares/multer')
+const {verificaToken} = require('../middlewares/authToken');
 
-//ROUTERS
+//_*ROUTERS
 const {getProductos, getProducto, createProducto, deleteProducto, buscarProducto} = require('../controllers/productoController')
 const router = Router()
 

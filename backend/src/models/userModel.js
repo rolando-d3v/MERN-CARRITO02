@@ -2,8 +2,8 @@ const { Schema, model } = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2");
 
 //ROLES VALIDOS
-let rolesValidos = {
-  values: ["USER_ROLE", "ADMIN_ROLE"],
+const rolesValidos = {
+  values: ["ADMIN_ROLE", "USER_ROLE"],
   message: "{VALUE} no es un role valido",
 };
 

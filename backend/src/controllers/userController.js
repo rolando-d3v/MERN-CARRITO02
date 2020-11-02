@@ -8,6 +8,8 @@ exports.createUser = async (req, res) => {
     const user = new userModel({
       email: req.body.email,
       name: req.body.name,
+      role: req.body.role,
+      estado: req.body.estado,
       password: await bcrypt.hash(req.body.password, 10),
     });
     
