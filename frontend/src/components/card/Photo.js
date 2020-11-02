@@ -5,7 +5,7 @@ import { Card} from "react-bootstrap";
 import './photo.scss'
 
 function Photo({ e_pro }) {
-  let url = process.env.REACT_APP_BACKEND_URL;
+  let url = process.env.REACT_APP_BACKEND_IMAGE;
 
   console.log(url);
   

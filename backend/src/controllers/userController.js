@@ -4,14 +4,15 @@ const userModel = require("../models/userModel");
 //_* ENDPOINT PARA CREATED USERS
 exports.createUser = async (req, res) => {
   try {
+   
     const user = new userModel({
       email: req.body.email,
       name: req.body.name,
       password: await bcrypt.hash(req.body.password, 10),
     });
-
+    
     //validar si el email es valido
-    let existeEmail = await userModel.findOne({ email: req.body.email });
+    let existeEmail = await userModel.findOne({ email: req.body.email })
 
     if (existeEmail) {
       res.json({ ok: false, message: "el email ya existe" });

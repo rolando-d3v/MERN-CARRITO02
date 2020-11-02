@@ -10,7 +10,7 @@ let rolesValidos = {
 //SCHEMA DEL USER
 const userSchema = new Schema(
   {
-    email: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true, lowercase: true },
     name: { type: String, required: true },
     password: { type: String, required: true },
     estado: { type: Boolean, default: true },
@@ -19,14 +19,16 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-// //FUNCION PARA NO MOSTRAR EL PASSWORD EN EL JSON DEL BACK-END
-// userSchema.methods.toJSON = function() {
-//     let user = this;
-//     let userObject = user.toObject();
-//     delete userObject.password;
 
-//     return userObject;
-//   }
+
+//FUNCION PARA NO MOSTRAR EL PASSWORD EN EL JSON DEL BACK-END
+userSchema.methods.toJSON = function() {
+    let user = this;
+    let userObject = user.toObject();
+    delete userObject.password;
+
+    return userObject;
+  }
 
 
 //MONGOOSE PAGINATE

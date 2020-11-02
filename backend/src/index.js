@@ -26,5 +26,6 @@ app.use(morgan('dev'))
 app.use(express.static(path.join( __dirname,'public')))
 
 //ROUTERS
-app.use('/' , require('./routers/productoRouter'))
+app.use('/api/v1' , require('./routers/productoRouter'))
 app.use('/api/v1', require('./routers/userRouter'))
+app.use('/api/v1', require('./routers/loginRouter'))

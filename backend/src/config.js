@@ -4,7 +4,7 @@
 process.env.PORT = process.env.PORT || 4000;
 
 //VARIABLE DE ENTORNO SECRET  SUBIR A HEROKU
-process.env.SECRET =  process.env.SECRET || "este-secret-en-desarrollo"
+process.env.SECRET =  process.env.SECRET || "secret-en-desarrollo"
 
 
 //PUERTO DE DB DE MONGODB

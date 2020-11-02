@@ -19,7 +19,7 @@ function Pokemon(props) {
   }, []);
 
 
-  let url = process.env.REACT_APP_BACKEND_URL;
+  let url = process.env.REACT_APP_BACKEND_IMAGE;
 
   return (
     <div className='pokemon' >
