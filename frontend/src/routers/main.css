@@ -1,0 +1,20 @@
+.div_mainx {
+    height: 100%;
+    background-color: red;
+    width: auto;
+    max-width: 94.5%;
+}
+
+
+.marginOFFx {
+   /* margin-left: 265px; */
+   margin-left: 265px;
+   transition: 0.5s;
+  }
+  
+  
+.marginONx {
+    margin-left: 90px;
+   transition: 0.5s;
+   }
+   

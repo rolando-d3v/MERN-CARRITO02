@@ -10,6 +10,8 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import "./sidebar.scss";
+import { useContext } from "react";
+import { ToggleConten } from "../../context/togleContext/TogleContext";
 
 const navList = [
   { icon: <FaPenSquare />, link: "/preguntas", menu: "Formulario" },
@@ -19,16 +21,20 @@ const navList = [
   },
 ];
 
-const SidebarComponent = (props) => {
+const SidebarComponent = () => {
+
+
+  const {toggle, toggleState} = useContext(ToggleConten)
+
   return (
-    <div className={`sidebar ${props.toggleState ? "sidebar-visible" : ""}`}>
+    <div className={`sidebar ${toggleState ? "sidebar-visible" : ""}`}>
 
      <div className='tooglex' >
-     { props.toggleState ?  <FaOutdent className="sidebar__close h2" onClick={props.toggle} />
-      : <FaIndent className="sidebar__close h2" onClick={props.toggle} />}
+     { toggleState ?  <FaOutdent className="sidebar__close h2" onClick={toggle} />
+      : <FaIndent className="sidebar__close h2" onClick={toggle} />}
      </div>
 
-      {props.toggleState ? (
+      {toggleState ? (
         <div className="sidebar__menu  ">
           <Nav className="list-unstyled pb-3">
             {navList.map((nav, i) => (

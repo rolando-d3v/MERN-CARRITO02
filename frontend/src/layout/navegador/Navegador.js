@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar, Nav, Image } from "react-bootstrap";
 import { FaUserTie, FaIdCard } from "react-icons/fa";
 import logo from "../../assets/img/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { types } from "../../context/auth/types";
+import AuthContext from "../../context/auth/authContext";
 
 
 const Navegador = () => {
+
+  const {user, dispatch} = useContext(AuthContext)
+
+
+  
+  const history = useHistory()
+
+  const exitUser = () => {
+    dispatch({
+      type: types.LOGOUT
+    })
+    history.replace('/login')
+  }
 
   return (
       <Navbar  bg='dark' className="nav-bar navbar-dark justify-content-end" sticky="top" >
@@ -36,6 +51,7 @@ const Navegador = () => {
                 </Link>
             </li>
           </ul>
+          <button  onClick={exitUser}  >salir</button>
         </Nav>
       </Navbar>
     
