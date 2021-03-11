@@ -6,9 +6,11 @@ import { Link, useHistory } from "react-router-dom";
 import { types } from "../../context/auth/types";
 import AuthContext from "../../context/auth/authContext";
 import "./navegador.scss";
+import { ToggleConten } from "../../context/togleContext/TogleContext";
 
 export default function Navegador() {
   const { user, dispatch } = useContext(AuthContext);
+  const { toggle, toggleState } = useContext(ToggleConten);
   const history = useHistory();
 
   const navLink = [
@@ -35,7 +37,7 @@ export default function Navegador() {
           />{" "}
           PokeDesk
         </Link>
-        
+
         <div className="nav_seccion1">
           <FaIcons.FaBars
             // onClick={() => setOpen(!open)}
@@ -52,8 +54,16 @@ export default function Navegador() {
             <FaIcons.FaSearch className="icon_search" />
           </div>
         </div>
-        <button onClick={exitUser}>salir</button>
+        <button style={tyle} onClick={exitUser}>
+          salir
+        </button>
+        <button onClick={toggle}>click toggle</button>
       </div>
     </nav>
   );
 }
+
+const tyle = {
+  color: "red",
+  backgroundColor: "#3179a8",
+};
