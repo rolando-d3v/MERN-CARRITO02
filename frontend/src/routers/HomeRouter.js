@@ -3,20 +3,11 @@ import { useContext } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { ToggleConten } from "../context/togleContext/TogleContext";
 import Buscar from "../pages/busqueda/Buscar";
-// import dc from "../pages/dc";
-// import HeroeId from "../pages/HeroeId";
-// import Marvel from "../pages/Marvel";
-// import Search from "../pages/Search";
-// import Productos from "../pages/Productos";
-// import Sidebar from "../layout/sidebar/Sidebar";
-// import Navbar from "../layout/navbar/Navbar";
-// import { useState } from "react";
-// import Libros from "../pages/libros";
 import CreatePokemon from "../pages/CreatePokemon";
 import Home from "../pages/Home";
 import Pokemon from "../pages/pokemon/Pokemon";
 import TablaPoke from "../pages/tablaPoke/TablaPoke";
-import "./main.css";
+import "./homeRouter.scss";
 
 export default function HomeRouter() {
   const { toggleState } = useContext(ToggleConten);
@@ -26,16 +17,10 @@ export default function HomeRouter() {
       <Switch>
         <Route exact path="/preguntas" component={CreatePokemon} />
         <Route exact={true} path="/" component={Home} />
-        {/* <Route exact={true} path="/preguntas" component={CreatePokemon} /> */}
         <Route exact={true} path="/pokemon/:id" component={Pokemon} />
         <Route exact={true} path="/tabla" component={TablaPoke} />
         <Route exact={true} path="/buscar" component={Buscar} />
-        {/* <Route exact path="/hero/:heroId" component={HeroeId} />
-            <Route exact path="/dc" component={dc} />
-            <Route exact path="/search" component={Search} />
-            <Route exact path="/productos" component={Productos} />
-            <Route exact path="/libros" component={Libros} />
-            <Redirect to="/marvel" /> */}
+        <Redirect to="/" />
       </Switch>
     </div>
   );

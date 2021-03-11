@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Tabla from '../../components/tabla/Tabla'
 import clienteAxios from '../../api/clienteAxios'
-import PaginationPoke from '../../layout/pagination/PaginationPoke'
+import PaginationPoke from '../../components/pagination/PaginationPoke'
 
 function TablaPoke() {
 

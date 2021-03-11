@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import clienteAxios from '../api/clienteAxios'
 import Photo from '../components/card/Photo'
-import PaginationPoke from "../layout/pagination/PaginationPoke";
+import PaginationPoke from "../components/pagination/PaginationPoke";
 
 function Home() {
 

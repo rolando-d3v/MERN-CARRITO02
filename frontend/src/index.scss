@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-style: none;
+}
+
+//funcion para remover el scroll del body
+.removeScrollBody {
+  overflow: hidden;
+}
+//quita el scroll de un div o box
+.detscroll-hidden::-webkit-scrollbar {
+  display: none;
+}
