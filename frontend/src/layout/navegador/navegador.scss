@@ -17,10 +17,11 @@
 .nav_link {
   color: #424242;
   margin: 0 15px;
-  text-decoration: none;
+  text-decoration: none !important ;
   font-size: 1em;
   font-weight: 600;
   outline: none;
+  
 
   a {
   text-decoration: none;
