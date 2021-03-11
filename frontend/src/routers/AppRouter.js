@@ -12,11 +12,9 @@ export default function AppRouter() {
   const {user} = useContext(AuthContext)
 
   return (
-      <div>
         <Switch>
           <PublicRoute exact path="/login"  component={Login}  isAuthenticated={user.logged} />
           <PrivateRoute path="/" component={HomeRouter} isAuthenticated={user.logged} />
         </Switch>
-      </div>
   );
 }

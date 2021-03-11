@@ -139,23 +139,24 @@
   padding: 9px 1.1rem;
   display: flex;
   flex-direction: column;
+  
+  .sidebar_link {
+    text-align: start;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    padding: 0.5em 0.8em;
+    text-decoration: none;
+  
+    &:hover {
+      background-color: #42424242;
+      transition: all 0.3s ease;
+    }
+  
+    svg {
+      margin-right: 8px;
+    }
+  }
 }
 
-.sidebar_link {
-  text-align: start;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  color: #fff;
-  padding: 0.5em 0.8em;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #42424242;
-    transition: all 0.3s ease;
-  }
-
-  svg {
-    margin-right: 8px;
-  }
-}

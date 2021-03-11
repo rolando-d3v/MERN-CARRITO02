@@ -62,7 +62,7 @@ export default function Dropdown() {
               >
                 <div>
                   {item.icon}
-                  <h1>{item.title}</h1>
+                  <span>{item.title}</span>
                 </div>
                 <span>
                   {clicked === index ? (
@@ -75,8 +75,8 @@ export default function Dropdown() {
               {clicked === index && (
                 <div className="dropdown_item">
                   {item.links.map((drop, index) => (
-                    <Link className="link_item" key={index} to={drop.url}>
-                      {drop.icon} <span>{drop.name}</span>
+                    <Link className="link-item" key={index} to={drop.url}>
+                        {drop.icon} <span>{drop.name}</span>
                     </Link>
                   ))}
                 </div>

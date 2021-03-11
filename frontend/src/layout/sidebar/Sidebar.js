@@ -1,33 +1,18 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { NavItem, Nav } from "react-bootstrap";
 import "./sidebar.scss";
-import {
-  FaIndent,
-  FaOutdent,
-  FaPenSquare,
-  FaSearch,
-  FaTable,
-  FaSignOutAlt,
-} from "react-icons/fa";
+import { FaIndent, FaOutdent } from "react-icons/fa";
 import "./sidebar.scss";
 import { useContext } from "react";
 import { ToggleConten } from "../../context/togleContext/TogleContext";
 import Dropdown from "../dropdown/Dropdown";
 
-const navList = [
-  { icon: <FaPenSquare />, link: "/preguntas", menu: "Formulario" },
-  { icon: <FaSearch />, link: "/buscar", menu: "Busqueda" },
-  { icon: <FaTable />, link: "/tabla", menu: "Tabla" },
-  { icon: <FaSignOutAlt />, link: "/login", menu: "salir" },
-];
-
 const linkSidebar = [
-  { name: "Home", icon: <FaIcons.FaHome /> },
-  { name: "Tools", icon: <FaIcons.FaTools /> },
-  { name: "Formulario", icon: <FaIcons.FaFolder /> },
-  { name: "Calendario", icon: <FaIcons.FaCalendarAlt /> },
+  { name: "Home", url: '/tabla', icon: <FaIcons.FaHome /> },
+  { name: "Tools", url: '/tabla', icon: <FaIcons.FaTools /> },
+  { name: "Formulario", url: '/tabla', icon: <FaIcons.FaFolder /> },
+  { name: "Calendario", url: '/tabla', icon: <FaIcons.FaCalendarAlt /> },
 ];
 
 export default function Sidebar() {
@@ -64,39 +49,13 @@ export default function Sidebar() {
 
       <div className="div_links">
         {linkSidebar.map((li, index) => (
-          <Link className="sidebar_link" key={index} to="/">
+          <Link className="sidebar_link" key={index} to={li.url}  >
             {li.icon} {li.name}
           </Link>
         ))}
       </div>
 
-      <Dropdown/>
-
-      {toggleState ? (
-        <div className="sidebar__menu  ">
-          <Nav className="list-unstyled pb-3">
-            {navList.map((nav, i) => (
-              <NavItem key={i}>
-                <Link className="nav-link" to={nav.link}>
-                  <span className="mr-3">{nav.icon}</span> {nav.menu}
-                </Link>
-              </NavItem>
-            ))}
-          </Nav>
-        </div>
-      ) : (
-        <div className="sidebarol">
-          <div className="list-rol">
-            {navList.map((nav, i) => (
-              <NavItem key={i}>
-                <Link className="nav-link" to={nav.link}>
-                  <span className="mr-3">{nav.icon}</span>
-                </Link>
-              </NavItem>
-            ))}
-          </div>
-        </div>
-      )}
+      <Dropdown />
     </div>
   );
 }

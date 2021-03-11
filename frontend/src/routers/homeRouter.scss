@@ -1,21 +1,26 @@
 .div_mainx {
+   display: flex;
+  
     height: 100%;
     background-color: red;
-    width: auto;
-    max-width: 94.5%;
+    width: 100%;
+    
+    padding: 1rem;
 }
 
 
 .marginOFFx {
-   /* margin-left: 265px; */
-   margin-left: 265px;
-   transition: 0.5s;
+   margin-left: 260px;
+   transition: all 0.5s  ease;
+   flex-wrap: nowrap;
+   max-width: 84%;
+//    transition: 0.5s;
   }
   
   
 .marginONx {
     // margin-left: 90px;
     margin-left: 0px;
-   transition: 0.5s;
+   transition: all 0.5s  ease;
    }
    
