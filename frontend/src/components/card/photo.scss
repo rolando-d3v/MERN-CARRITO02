@@ -1,15 +1,34 @@
-.card {
-    background-color: rgb(206, 162, 162);
+.card_content {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #000;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(206, 162, 162);
+  padding: 1rem;
+  width: 100%;
 
-    img {
-        margin: 0 auto;
-        width: 70%;
+  &:hover {
+    background: #4380db;
+  }
+
+  .img_card {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  .card_body {
+    padding: 1rem;
+    width: 100%;
+
+    .card_btn {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      background-color: #4380db;
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 15px;
     }
-
-    .btn {
-        background-color: #4380db;
-        border-radius: 15px;
-        width: 100%;
-    }
-
+  }
 }

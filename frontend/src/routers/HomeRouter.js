@@ -5,7 +5,7 @@ import { ToggleConten } from "../context/togleContext/TogleContext";
 import Navegador from "../layout/navegador/Navegador";
 import Buscar from "../pages/busqueda/Buscar";
 import CreatePokemon from "../pages/CreatePokemon";
-import Home from "../pages/Home";
+import Home from "../pages/home/Home";
 import Pokemon from "../pages/pokemon/Pokemon";
 import TablaPoke from "../pages/tablaPoke/TablaPoke";
 import "./homeRouter.scss";

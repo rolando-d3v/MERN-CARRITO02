@@ -28,7 +28,7 @@ export default function Sidebar() {
       <div className="header_logo">
         <div>
           <FaIcons.FaApple style={{ fontSize: "1.5rem" }} />
-          <span>Dashboar</span>
+          <h2 className='text_logo'  >Dashboar</h2>
         </div>
       </div>
 

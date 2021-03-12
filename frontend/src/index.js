@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "rc-pagination/assets/index.css";
 import App from "./App";
 import AuthState from "./context/auth/authState";
