@@ -50,8 +50,7 @@ export default function Dropdown() {
   ];
 
   return (
-    <div className="accordion_section">
-      <div className="container">
+      <div className="container_drop">
         {Data.map((item, index) => {
           return (
             <div key={index}>
@@ -85,6 +84,5 @@ export default function Dropdown() {
           );
         })}
       </div>
-    </div>
   );
 }

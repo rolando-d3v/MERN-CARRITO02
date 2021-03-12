@@ -5,17 +5,15 @@ import AppRouter from "./routers/AppRouter";
 
 
 
-function App() {
+export default function App() {
 
   return (
     <div>
       <BrowserRouter>
-        <Navegador />
         <Sidebar  />
+        {/* <Navegador /> */}
         <AppRouter />
       </BrowserRouter>
     </div>
   );
 }
-
-export default App;

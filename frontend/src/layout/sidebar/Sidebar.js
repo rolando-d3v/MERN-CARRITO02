@@ -7,31 +7,25 @@ import "./sidebar.scss";
 import { useContext } from "react";
 import { ToggleConten } from "../../context/togleContext/TogleContext";
 import Dropdown from "../dropdown/Dropdown";
+import AuthContext from "../../context/auth/authContext";
 
 const linkSidebar = [
   { name: "Home", url: '/tabla', icon: <FaIcons.FaHome /> },
-  { name: "Tools", url: '/tabla', icon: <FaIcons.FaTools /> },
-  { name: "Formulario", url: '/tabla', icon: <FaIcons.FaFolder /> },
+  { name: "Tools", url: '/', icon: <FaIcons.FaTools /> },
+  { name: "Formulario", url: '/preguntas', icon: <FaIcons.FaFolder /> },
   { name: "Calendario", url: '/tabla', icon: <FaIcons.FaCalendarAlt /> },
 ];
 
 export default function Sidebar() {
   const { toggle, toggleState } = useContext(ToggleConten);
+  const { user} = useContext(AuthContext);
 
   return (
-    <div className={`sidebar ${toggleState ? "sidebar-visible" : ""}`}>
-      <div className="tooglex">
-        {toggleState ? (
-          <FaOutdent className="sidebar__close h2" onClick={toggle} />
-        ) : (
-          <FaIndent className="sidebar__close h2" onClick={toggle} />
-        )}
-      </div>
-
+    <div style={{ display: !user.logged && "none" }}  className={`sidebar ${toggleState ? "sidebar-visible" : ""}`}>
       <div className="header_logo">
         <div>
           <FaIcons.FaApple style={{ fontSize: "1.5rem" }} />
-          <h3>Dashboar</h3>
+          <span>Dashboar</span>
         </div>
       </div>
 

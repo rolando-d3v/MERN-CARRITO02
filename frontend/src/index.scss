@@ -1,9 +1,19 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;   //quitar espaciados de las cajas
   font-family: "Poppins", sans-serif;
 }
+
+a {
+  text-decoration: none;
+}
+
+a{
+  text-decoration: underline;
+}
+
+
 
 
 //funcion para remover el scroll del body

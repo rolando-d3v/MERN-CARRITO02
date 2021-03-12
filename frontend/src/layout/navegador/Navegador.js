@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { FaIndent, FaOutdent } from "react-icons/fa";
 import { Navbar, Nav, Image } from "react-bootstrap";
 import * as FaIcons from "react-icons/fa";
 import logo from "../../assets/img/logo.png";
@@ -11,6 +12,8 @@ import { ToggleConten } from "../../context/togleContext/TogleContext";
 export default function Navegador() {
   const { user, dispatch } = useContext(AuthContext);
   const { toggle, toggleState } = useContext(ToggleConten);
+
+  console.log(user);
   const history = useHistory();
 
   const navLink = [
@@ -26,23 +29,21 @@ export default function Navegador() {
   };
 
   return (
-    <nav className="nav_container" sticky="top">
+    <nav
+      style={{ display: !user.logged && "none" }}
+      className="nav_container"
+      // sticky="top"
+    >
       <div className="nav_seccion1">
-        <Link className="navbar-brand  navbar-text font-weight-bold" to="/">
-          <Image
-            src={logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top mr-2"
-          />{" "}
-          PokeDesk
-        </Link>
-
         <div className="nav_seccion1">
-          <FaIcons.FaBars
-            // onClick={() => setOpen(!open)}
-            style={{ fontSize: "25px" }}
-          />
+          <div className="tooglex">
+            {toggleState ? (
+              <FaOutdent className="sidebar__close " onClick={toggle} />
+            ) : (
+              <FaIndent className="sidebar__close " onClick={toggle} />
+            )}
+          </div>
+
           {navLink.map((link, index) => (
             <Link className="nav_link" key={index} to={link.url}>
               {link.name}
@@ -57,7 +58,6 @@ export default function Navegador() {
         <button style={tyle} onClick={exitUser}>
           salir
         </button>
-        <button onClick={toggle}>click toggle</button>
       </div>
     </nav>
   );
