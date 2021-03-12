@@ -10,18 +10,21 @@ import Dropdown from "../dropdown/Dropdown";
 import AuthContext from "../../context/auth/authContext";
 
 const linkSidebar = [
-  { name: "Home", url: '/tabla', icon: <FaIcons.FaHome /> },
-  { name: "Tools", url: '/', icon: <FaIcons.FaTools /> },
-  { name: "Formulario", url: '/preguntas', icon: <FaIcons.FaFolder /> },
-  { name: "Calendario", url: '/tabla', icon: <FaIcons.FaCalendarAlt /> },
+  { name: "Home", url: "/tabla", icon: <FaIcons.FaHome /> },
+  { name: "Tools", url: "/", icon: <FaIcons.FaTools /> },
+  { name: "Formulario", url: "/preguntas", icon: <FaIcons.FaFolder /> },
+  { name: "Calendario", url: "/tabla", icon: <FaIcons.FaCalendarAlt /> },
 ];
 
 export default function Sidebar() {
   const { toggle, toggleState } = useContext(ToggleConten);
-  const { user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
-    <div style={{ display: !user.logged && "none" }}  className={`sidebar ${toggleState ? "sidebar-visible" : ""}`}>
+    <div
+      style={{ display: !user.logged && "none" }}
+      className={`sidebar ${toggleState ? "sidebar-visible" : ""}`}
+    >
       <div className="header_logo">
         <div>
           <FaIcons.FaApple style={{ fontSize: "1.5rem" }} />
@@ -43,7 +46,7 @@ export default function Sidebar() {
 
       <div className="div_links">
         {linkSidebar.map((li, index) => (
-          <Link className="sidebar_link" key={index} to={li.url}  >
+          <Link className="sidebar_link" key={index} to={li.url}>
             {li.icon} {li.name}
           </Link>
         ))}
