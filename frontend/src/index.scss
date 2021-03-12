@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;   //quitar espaciados de las cajas
+  box-sizing: border-box; //quitar espaciados de las cajas
   font-family: "Poppins", sans-serif;
 }
 
@@ -9,12 +9,9 @@ a {
   text-decoration: none;
 }
 
-a{
+a {
   text-decoration: underline;
 }
-
-
-
 
 //funcion para remover el scroll del body
 .removeScrollBody {
@@ -24,3 +21,5 @@ a{
 .detscroll-hidden::-webkit-scrollbar {
   display: none;
 }
+
+$bluex: #0de26d;
