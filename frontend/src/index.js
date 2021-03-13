@@ -6,6 +6,7 @@ import App from "./App";
 import AuthState from "./context/auth/authState";
 import TogleContext from "./context/togleContext/TogleContext";
 import './index.scss'
+import './sass/styles.scss'
 
 ReactDOM.render(
   <React.Fragment>
