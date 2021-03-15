@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import AuthContext from "../../context/auth/authContext";
+import { types } from "../../context/auth/types";
 import "./login2.scss";
 
-export default function Login2() {
-  return (
-    <div className="bg_login">
+export default function Login2({ history }) {
+  const [categoria, setCategoria] = useState("");
+  const { user, dispatch } = useContext(AuthContext);
 
+  let lastpath = localStorage.getItem("lastpath") || "/";
+
+  const loginUser = () => {
+    dispatch({
+      type: types.LOGIN,
+      payload: {
+        name: "Rolando",
+      },
+    });
+    history.replace(lastpath);
+  };
+
+  const selectData = [
+    { id: 1, name: "Peru (51)" },
+    { id: 2, name: "Brasil (125)" },
+    { id: 3, name: "Argentina" },
+    { id: 4, name: "Colombia" },
+    { id: 5, name: "Francia" },
+    { id: 6, name: "Cuba" },
+  ];
+
+  return (
+    <div
+      className="bg_login"
+      style={{ backgroundImage: `url('assets/bg.jpg')` }}
+    >
       <div className="container_login">
         <div className="div_login">
           <img
@@ -14,19 +42,52 @@ export default function Login2() {
             alt="Microsoft"
           />
 
-          <div className='body_login' >
-            <h3 className='text_login'  >Crear cuenta</h3>
-            <div className='div_input'>
-              <input className='input_login' type="text" placeholder='alguien@example.com' />
-            </div>
-            <h3>Usar un número de teléfono en su lugar</h3>
-            <h3>Obtener una nueva dirección de correo electrónico</h3>
+          <div className="body_login">
+            <h3 className="text_login">Necesitamos comprobar tu identidad</h3>
+            <h3 className="text_label">
+              Escribre tu numero de telefono para enviarte un codigo de
+              seguridad
+            </h3>
 
-            <button className="btn_login">Siguiente</button>
+            <select
+              className="div_input_select"
+              as="select"
+              // value="pais"
+              onChange={(e) => setCategoria(e.target.value)}
+              value={categoria}
+            >
+              <option value=""> Selecciona tu Pais </option>
+              {selectData.map((sele) => (
+                <option value={sele.name} key={sele.id}>
+                  {sele.name}
+                </option>
+              ))}
+            </select>
+
+            <div className="div_input">
+              <input
+                className="input_login"
+                type="text"
+                placeholder="Numero de telefono"
+              />
+            </div>
+
+            <h3>Comprobar el telefono mediante</h3>
+            <div className='div_check' >
+              <input className='input_check' type="radio" name="Mensaje de texto" id="m" />
+              <label>Mensaje de texto</label>
+            </div>
+            <div className='div_check' >
+              <input className='input_check' type="radio" name="llamada" id="ll" />
+              <label>Llamada</label>
+            </div>
+
+            <button className="btn_login" onClick={loginUser}>
+              Enviar
+            </button>
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
