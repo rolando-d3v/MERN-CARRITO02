@@ -30,10 +30,10 @@ export default function Login2({ history }) {
 
   return (
     <div
-      className="bg_login"
+      className="bg_login2"
       style={{ backgroundImage: `url('assets/bg.jpg')` }}
     >
-      <div className="container_login">
+      <div className="container_login2">
         <div className="div_login">
           <img
             className="logo"

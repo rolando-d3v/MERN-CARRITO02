@@ -1,6 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import AuthContext from "../../context/auth/authContext";
 import { types } from "../../context/auth/types";
+import {Link} from 'react-router-dom'
 import "./login.scss";
 
 export default function Login({ history }) {
@@ -32,13 +33,18 @@ export default function Login({ history }) {
           />
 
           <div className='body_login' >
-            <h3 className='text_login'  >Crear cuenta</h3>
+            <h3 className='text_login'  >Escribir contraseña</h3>
+
             <div className='div_input'>
               <input className='input_login' type="text" placeholder='alguien@example.com' />
             </div>
-            <h3>Usar un número de teléfono en su lugar</h3>
-            <h3>Obtener una nueva dirección de correo electrónico</h3>
 
+            <div className='div_input'>
+              <input className='input_login' type="password" placeholder='Contraseña' />
+            </div>
+
+            <Link to='/login2' className='link_login' >¿Olvido su contraseña?  </Link>
+            <Link to='/login2' className='link_login' >Iniciar sesion con una llave de seguridad</Link>
             <button className="btn_login" onClick={loginUser}>Siguiente</button>
           </div>
         </div>
