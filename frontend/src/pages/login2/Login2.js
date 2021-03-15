@@ -4,6 +4,7 @@ import "./login2.scss";
 export default function Login2() {
   return (
     <div className="bg_login">
+
       <div className="container_login">
         <div className="div_login">
           <img
@@ -25,6 +26,7 @@ export default function Login2() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }
