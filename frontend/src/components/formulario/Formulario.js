@@ -119,6 +119,12 @@ export default function Formulario() {
       <button  className='xbutton_primary'  type="submit">
         crear Poke
       </button>
+      <button  className='button_p_primary'  type="submit">
+        crear Poke
+      </button>
+      <button  className='button_p_success'  type="submit">
+        crear Poke
+      </button>
     </Form>
   );
 }
