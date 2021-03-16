@@ -20,12 +20,12 @@ export default function Login2({ history }) {
   };
 
   const selectData = [
-    { id: 1, name: "Peru (51)" },
-    { id: 2, name: "Brasil (125)" },
-    { id: 3, name: "Argentina" },
-    { id: 4, name: "Colombia" },
-    { id: 5, name: "Francia" },
-    { id: 6, name: "Cuba" },
+    { id: 1, name: "Peru - (51)" },
+    { id: 2, name: "Brasil - (105)" },
+    { id: 3, name: "Argentina - (55)" },
+    { id: 4, name: "Colombia - (15)" },
+    { id: 5, name: "Francia - (25)" },
+    { id: 6, name: "Cuba - (125)" },
   ];
 
   return (

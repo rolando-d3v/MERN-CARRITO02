@@ -3,28 +3,36 @@
   position: sticky;
   z-index: 1;
   top: 0;
-  height: 64px;
   background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+  div {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1rem;
+  }
 }
 
 //seccion 1
 .nav_seccion1 {
   display: flex;
-  margin: 0 1rem;
   align-items: center;
 
   .sidebar__close {
     cursor: pointer;
     font-size: 25px;
     color: #424242;
+    margin-right: 10px;
+
+    @media (max-width: 780px) {
+      display: none;
+    }
   }
 
   .nav_link {
     color: #424242;
-    margin: 0 15px;
+    margin-right: 15px;
     text-decoration: none !important ;
     font-size: 1em;
     font-weight: 600;
@@ -41,6 +49,11 @@
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (max-width: 780px) {
+    display: none;
+  }
+
   .input_search {
     width: 100%;
     outline: none;
@@ -54,5 +67,33 @@
     color: #424242;
     right: 0px;
     margin-right: 0.9rem;
+  }
+}
+
+//seccion 2
+.nav_seccion2 {
+  display: flex;
+  align-items: center;
+
+  .sidebar__close2 {
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
+    font-size: 25px;
+    color: #424242;
+    @media (max-width: 780px) {
+      display: block;
+    }
+  }
+
+  .btn_exit {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 500;
+    height: 35px;
+    width: 90px;
+    background-color: #387bb9;
   }
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import {Table} from 'react-bootstrap'
 // import dayjs from 'dayjs'
-import { format, compareAsc } from 'date-fns'
+import { format } from 'date-fns'
+import './tabla.scss'
 
 
 function Tabla(props) {
@@ -10,12 +11,11 @@ function Tabla(props) {
 
 
   return (
-    <div>
-      <Table responsive  bordered hover  >
-        <thead className='thead-dark' >
+      <div className='container_table' >
+      <table className='div_table'>
+        <thead className='head_table' >
           <tr>
             <th>#</th>
-            <th>ID</th>
             <th>Name Pokemon</th>
             <th>Descripcion</th>
             <th>Fecha</th>
@@ -23,10 +23,9 @@ function Tabla(props) {
           </tr>
         </thead>
         {dataTable.map((table, index)=> (
-          <tbody key={table._id} >
+          <tbody className='body_table' key={table._id} >
           <tr>
-            <td>{index}  </td>
-            <td>{table._id}  </td>
+            <td>{index} </td>
             <td> {table.name} </td>
             <td> {table.description} </td>
             <td>{format(new Date(table.createdAt), 'dd/MMM/yyyy - kkmm-aaaa')}</td>
@@ -34,7 +33,7 @@ function Tabla(props) {
           </tr>
         </tbody>
         ))}
-      </Table>
+      </table>
     </div>
   );
 }

@@ -34,15 +34,13 @@ export default function Navegador() {
       className="nav_container"
       // sticky="top"
     >
-      <div className="nav_seccion1">
+      <div>
         <div className="nav_seccion1">
-          <div className="tooglex">
-            {toggleState ? (
-              <FaOutdent className="sidebar__close " onClick={toggle} />
-            ) : (
-              <FaIndent className="sidebar__close " onClick={toggle} />
-            )}
-          </div>
+          {toggleState ? (
+            <FaOutdent className="sidebar__close " onClick={toggle} />
+          ) : (
+            <FaIndent className="sidebar__close " onClick={toggle} />
+          )}
 
           {navLink.map((link, index) => (
             <Link className="nav_link" key={index} to={link.url}>
@@ -50,20 +48,31 @@ export default function Navegador() {
             </Link>
           ))}
 
-          <div className="contenedor_input">
+          <section className="contenedor_input">
             <input className="input_search" type="text" placeholder="Buscar" />
             <FaIcons.FaSearch className="icon_search" />
-          </div>
+          </section>
         </div>
-        <button style={tyle} onClick={exitUser}>
-          salir
-        </button>
+
+        <div className="nav_seccion2">
+
+
+        <section>
+          
+        </section>
+
+
+          <button className='btn_exit'  onClick={exitUser}>
+            salir
+          </button>
+          {toggleState ? (
+            <FaOutdent className="sidebar__close2 " onClick={toggle} />
+          ) : (
+            <FaIndent className="sidebar__close2 " onClick={toggle} />
+          )}
+        </div>
       </div>
     </nav>
   );
 }
 
-const tyle = {
-  color: "red",
-  backgroundColor: "#3179a8",
-};

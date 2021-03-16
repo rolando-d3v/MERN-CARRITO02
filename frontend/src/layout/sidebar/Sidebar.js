@@ -2,7 +2,7 @@ import React from "react";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./sidebar.scss";
-import { FaIndent, FaOutdent } from "react-icons/fa";
+// import { FaIndent, FaOutdent } from "react-icons/fa";
 import "./sidebar.scss";
 import { useContext } from "react";
 import { ToggleConten } from "../../context/togleContext/TogleContext";
@@ -35,7 +35,7 @@ export default function Sidebar() {
       <div className="header_avatar">
         <div>
           <img src="/assets/avatar.jpg" alt="alt" />
-          <span>Susan Torres</span>
+          <span>Admin</span>
         </div>
       </div>
 

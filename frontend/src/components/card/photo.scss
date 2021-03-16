@@ -40,7 +40,7 @@
 
       .sub_text {
         font-size: 0.9rem;
-        color: #89dfb7;
+        color: #b5d3c5;
       }
     }
 
@@ -69,6 +69,9 @@
   @media (max-width: 760px) {
     flex-direction: column;
     text-align: center;
+    width: 18rem;
+    // max-width: 80%;
+
 
     .img_card {
       width: 55%;
