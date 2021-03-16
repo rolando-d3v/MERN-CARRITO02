@@ -67,6 +67,7 @@ export default function Navegador() {
           <button className='btn_exit'  onClick={exitUser}>
             salir
           </button>
+         
           {toggleState ? (
             <FaOutdent className="sidebar__close2 " onClick={toggle} />
           ) : (
