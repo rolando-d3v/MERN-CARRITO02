@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import * as FaIcons from "react-icons/fa";
 import Swal from "sweetalert2";
 import clienteAxios from "../../api/clienteAxios";
 import "./formulario.scss";
@@ -74,58 +74,98 @@ export default function Formulario() {
     } catch (error) {}
   };
 
+  //efecto de input label hacia arriba
+  useEffect(() => {
+    const inputs = document.querySelectorAll(".input");
+
+    function addcl() {
+      let parent = this.parentNode.parentNode;
+      parent.classList.add("focus");
+    }
+
+    function remcl() {
+      let parent = this.parentNode.parentNode;
+      if (this.value == "") {
+        parent.classList.remove("focus");
+      }
+    }
+
+    inputs.forEach((input) => {
+      input.addEventListener("focus", addcl);
+      input.addEventListener("blur", remcl);
+    });
+  }, []);
+
   return (
-    <Form className="m-5" onSubmit={subirData}>
-      <Form.Group>
-        <Form.Label>nombre</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter name"
-          name="name"
-          onChange={obtenerData}
-        />
-      </Form.Group>
+    <form className="form_create_poke" onSubmit={subirData}>
+      <section className="div_input_poke">
+        <span className="icon_poke">
+          <FaIcons.FaUser className="" />
+        </span>
+        <div>
+          <label className="label_form">Enter name</label>
+          <input
+            className="input"
+            type="text"
+            name="name"
+            onChange={obtenerData}
+            autoComplete="off"
+          />
+        </div>
+      </section>
 
-      <Form.Group>
-        <Form.Label>Descripcion</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="ingresa Descripcion"
-          name="description"
-          onChange={obtenerData}
-        />
-      </Form.Group>
+      <section className="div_input_poke">
+        <span className="icon_poke">
+          <FaIcons.FaUser className="" />
+        </span>
+        <div>
+          <label className="label_form">Descripcion</label>
+          <input
+            className="input"
+            autoComplete="off"
+            type="text"
+            name="description"
+            onChange={obtenerData}
+          />
+        </div>
+      </section>
 
-      <Form.Group>
-        <Form.Label>Precio Unitario</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="ingresa precio"
-          name="precioUnitario"
-          onChange={obtenerData}
-        />
-      </Form.Group>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Label>
+      <section className="div_input_poke">
+        <span className="icon_poke">
+          <FaIcons.FaUser className="" />
+        </span>
+        <div>
+          <label className="label_form">ingresa precio</label>
+          <input
+            className="input"
+            type="number"
+            // placeholder="ingresa precio"
+            name="precioUnitario"
+            onChange={obtenerData}
+          />
+        </div>
+      </section>
+
+      <section controlId="formBasicCheckbox">
+        <label className="label_form">
           Imagen admitida <span className="font-weight-bold">(png o jpg)</span>{" "}
-        </Form.Label>
-        <Form.Control
+        </label>
+        <input
           type="file"
           name="photo"
           accept="image/png, image/jpeg, image/jpg"
           onChange={obtenerFile}
         />
-      </Form.Group>
-      <button  className='xbutton_primary'  type="submit">
+      </section>
+      <button className="xbutton_primary" type="submit">
         crear Poke
       </button>
-      <button  className='button_p_primary'  type="submit">
+      <button className="button_p_primary" type="submit">
         crear Poke
       </button>
-      <button  className='button_p_success'  type="submit">
+      <button className="button_p_success" type="submit">
         crear Poke
       </button>
-    </Form>
+    </form>
   );
 }
-

@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 import './tabla.scss'
 
 
-function Tabla(props) {
+export default function Tabla(props) {
 
   const  {dataTable} = props
 
@@ -38,4 +38,4 @@ function Tabla(props) {
   );
 }
 
-export default Tabla;
+

@@ -2,7 +2,7 @@ import React from "react";
 
 import Formulario from "../components/formulario/Formulario";
 
-function CreatePokemon() {
+export default function CreatePokemon() {
   return (
     <div className='' >
       <Formulario/>
@@ -10,4 +10,3 @@ function CreatePokemon() {
   );
 }
 
-export default CreatePokemon;
