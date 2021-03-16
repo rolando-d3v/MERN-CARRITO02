@@ -10,7 +10,7 @@ export default function TogleContext({ children }) {
     setToggleState(toggleState === false ? true : false);
   };
 
-  console.log(toggleState);
+  // console.log(toggleState);
 
   return (
     <ToggleConten.Provider value={{ toggleState, toggle }}>

@@ -1,5 +1,4 @@
 import { BrowserRouter } from "react-router-dom";
-import Navegador from "./layout/navegador/Navegador";
 import Sidebar from "./layout/sidebar/Sidebar";
 import AppRouter from "./routers/AppRouter";
 import './index.scss'
@@ -9,10 +8,9 @@ import './index.scss'
 export default function App() {
 
   return (
-    <div>
+    <div  >
       <BrowserRouter>
        <Sidebar  />
-        {/* <Navegador /> */}
         <AppRouter />
       </BrowserRouter>
     </div>

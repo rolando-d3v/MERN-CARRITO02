@@ -4,8 +4,10 @@ import { types } from "../../context/auth/types";
 import { Link } from "react-router-dom";
 import "./login.scss";
 
+
 export default function Login({ history }) {
   const { user, dispatch } = useContext(AuthContext);
+ 
 
   let lastpath = localStorage.getItem("lastpath") || "/";
 

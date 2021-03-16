@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box; //quitar espaciados de las cajas
   font-family: "Poppins", sans-serif;
+  
 }
 
 a {
@@ -24,4 +25,21 @@ a {
   display: none;
 }
 
+
+.themeDark {
+  // background-color: #10131a;
+  // background-color: #0c0a20;
+  background-color: #000c1b;
+  transition: all 0.35s ease-in-out;
+}
+
+.themeLight {
+  background-color: rgb(235, 225, 225);
+  transition: all 0.35s ease-in-out;
+}
+
+
+// body {
+//   background-color: #000c1b;
+// }
 

@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
 import { FaIndent, FaOutdent } from "react-icons/fa";
-import { Navbar, Nav, Image } from "react-bootstrap";
 import * as FaIcons from "react-icons/fa";
-import logo from "../../assets/img/logo.png";
 import { Link, useHistory } from "react-router-dom";
 import { types } from "../../context/auth/types";
 import AuthContext from "../../context/auth/authContext";
 import "./navegador.scss";
 import { ToggleConten } from "../../context/togleContext/TogleContext";
+import { DarkContext } from "../../context/darkContext/DarkContext";
 
 export default function Navegador() {
   const { user, dispatch } = useContext(AuthContext);
   const { toggle, toggleState } = useContext(ToggleConten);
+  const {toggleBoolean, toggleTheme} = useContext(DarkContext)
+
 
   console.log(user);
   const history = useHistory();
@@ -57,7 +58,7 @@ export default function Navegador() {
         <div className="nav_seccion2">
 
 
-        <section className='div_use_dark'  >
+        <section className='div_use_dark' onClick={toggleTheme}  >
         <FaIcons.FaSun className="icon_search" />
         <FaIcons.FaMoon className="icon_search" />
         <span className='togg'></span>
