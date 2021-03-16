@@ -57,8 +57,10 @@ export default function Navegador() {
         <div className="nav_seccion2">
 
 
-        <section>
-          
+        <section className='div_use_dark'  >
+        <FaIcons.FaSun className="icon_search" />
+        <FaIcons.FaMoon className="icon_search" />
+        <span className='togg'></span>
         </section>
 
 

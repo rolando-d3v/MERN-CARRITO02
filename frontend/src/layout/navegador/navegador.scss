@@ -75,6 +75,34 @@
   display: flex;
   align-items: center;
 
+  .div_use_dark {
+    position: relative;
+    margin-right: 8px;
+    display: flex;
+    padding: 0 4px;
+    align-items: center;
+    justify-content: space-between;
+    width: 55px;
+    height: 26px;
+    background-color: aqua;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+
+    .togg {
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: 
+      inline-block;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      background-color: rgb(12, 13, 43);
+      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.8);
+    }
+  }
+
   .sidebar__close2 {
     cursor: pointer;
     margin-left: 10px;
