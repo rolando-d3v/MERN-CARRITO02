@@ -16,20 +16,10 @@ a {
 }
 
 
-//funcion para remover el scroll del body
-.removeScrollBody {
-  overflow: hidden;
-}
-//quita el scroll de un div o box
-.detscroll-hidden::-webkit-scrollbar {
-  display: none;
-}
-
-
+//className para modo dark
 .themeDark {
-  // background-color: #10131a;
-  // background-color: #0c0a20;
   background-color: #000c1b;
+  color: white;
   transition: all 0.35s ease-in-out;
 }
 
@@ -39,7 +29,21 @@ a {
 }
 
 
-// body {
-//   background-color: #000c1b;
-// }
+
+
+
+
+
+
+
+//funcion para remover el scroll del body
+.removeScrollBody {
+  overflow: hidden;
+}  
+//quita el scroll de un div o box
+.detscroll-hidden::-webkit-scrollbar {
+  display: none;
+}  
+
+
 

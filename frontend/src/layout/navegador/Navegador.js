@@ -11,8 +11,7 @@ import { DarkContext } from "../../context/darkContext/DarkContext";
 export default function Navegador() {
   const { user, dispatch } = useContext(AuthContext);
   const { toggle, toggleState } = useContext(ToggleConten);
-  const {toggleBoolean, toggleTheme} = useContext(DarkContext)
-
+  const { toggleBoolean, toggleTheme } = useContext(DarkContext);
 
   console.log(user);
   const history = useHistory();
@@ -56,19 +55,23 @@ export default function Navegador() {
         </div>
 
         <div className="nav_seccion2">
+          <section
+            className="div_use_dark"
+            onClick={toggleTheme}
+            style={{ backgroundColor: `${toggleBoolean ? "aqua" : "yellow"}` }}
+          >
+            <FaIcons.FaMoon className="icon_search" />
+            <FaIcons.FaSun className="icon_search" />
+            {/* <span className='togg'   ></span> */}
+            <span
+              className={`togg ${toggleBoolean ? "toggTrue" : "toggFalse "} `}
+            ></span>
+          </section>
 
-
-        <section className='div_use_dark' onClick={toggleTheme}  >
-        <FaIcons.FaSun className="icon_search" />
-        <FaIcons.FaMoon className="icon_search" />
-        <span className='togg'></span>
-        </section>
-
-
-          <button className='btn_exit'  onClick={exitUser}>
+          <button className="btn_exit" onClick={exitUser}>
             salir
           </button>
-         
+
           {toggleState ? (
             <FaOutdent className="sidebar__close2 " onClick={toggle} />
           ) : (
@@ -79,4 +82,3 @@ export default function Navegador() {
     </nav>
   );
 }
-
